@@ -1,0 +1,95 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Hide scrollbars */
+::-webkit-scrollbar {
+  display: none;
+}
+
+* {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+html, body {
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f5f5f5;
+}
+
+/* Responsive breakpoints */
+@media (max-width: 1920px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 1600px) {
+  html {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 1440px) {
+  html {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 1366px) {
+  html {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 1280px) {
+  html {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 1024px) {
+  html {
+    font-size: 11px;
+  }
+}
+
+@media (max-width: 768px) {
+  html {
+    font-size: 10px;
+  }
+}
+
+/* Custom scrollbar for menu tabs */
+.menu-tabs-scrollable::-webkit-scrollbar {
+  display: block;
+  height: 6px;
+}
+
+.menu-tabs-scrollable::-webkit-scrollbar-track {
+  background: #3f5f5a;
+  border-radius: 3px;
+}
+
+.menu-tabs-scrollable::-webkit-scrollbar-thumb {
+  background: #2d4742;
+  border-radius: 3px;
+}
+
+.menu-tabs-scrollable::-webkit-scrollbar-thumb:hover {
+  background: #1f3530;
+}
+
+.menu-tabs-scrollable {
+  scrollbar-width: thin;
+  scrollbar-color: #2d4742 #3f5f5a;
+}
