@@ -5,18 +5,9 @@ const AuditStatus = () => {
     { status: 'InProgress', count: 410, total: 450, color: '#f59e0b' },
   ];
 
-  // Weekly data for bar chart
-  const weeklyData = [
-    { day: 'Mon', scheduled: 45, exceptions: 38, inProgress: 52 },
-    { day: 'Tue', scheduled: 52, exceptions: 41, inProgress: 58 },
-    { day: 'Wed', scheduled: 48, exceptions: 35, inProgress: 55 },
-    { day: 'Thu', scheduled: 55, exceptions: 42, inProgress: 62 },
-    { day: 'Fri', scheduled: 50, exceptions: 39, inProgress: 59 },
-    { day: 'Sat', scheduled: 50, exceptions: 45, inProgress: 62 },
-    { day: 'Sun', scheduled: 50, exceptions: 45, inProgress: 62 },
-  ];
+  // Weekly chart is currently not rendered; weekly data removed.
 
-  const maxValue = Math.max(...weeklyData.flatMap(d => [d.scheduled, d.exceptions, d.inProgress]));
+  // maxValue removed because weekly chart is not rendered here.
 
   const containerStyle: React.CSSProperties = {
     backgroundColor: 'white',
@@ -104,47 +95,8 @@ const AuditStatus = () => {
     color: '#1f2937',
   };
 
-  const chartContainerStyle: React.CSSProperties = {
-    display: 'flex',
-    alignItems: 'flex-end',
-    justifyContent: 'space-between',
-    height: '12vw',
-    gap: '0.5vw',
-    marginTop: '1vw',
-    padding: '0.5vw 0',
-  };
-
-  const dayColumnStyle: React.CSSProperties = {
-    flex: 1,
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-    gap: '0.3vw',
-  };
-
-  const barsGroupStyle: React.CSSProperties = {
-    width: '100%',
-    display: 'flex',
-    alignItems: 'flex-end',
-    justifyContent: 'center',
-    gap: '0.15vw',
-    height: '100%',
-  };
-
-  const getBarStyle = (value: number, color: string): React.CSSProperties => ({
-    flex: 1,
-    height: `${(value / maxValue) * 100}%`,
-    backgroundColor: color,
-    borderRadius: '0.2vw 0.2vw 0 0',
-    transition: 'all 0.3s ease',
-    minHeight: '5%',
-  });
-
-  const dayLabelStyle: React.CSSProperties = {
-    fontSize: 'clamp(9px, 0.65vw, 11px)',
-    color: '#6b7280',
-    fontWeight: '500',
-  };
+  // Chart layout and bar styles were removed because the chart is not rendered here.
+  // If the weekly chart is re-introduced move the chart styles back in.
 
   const totalAudits = 1350;
   const calculatePercentage = (count: number, total: number) => (count / total) * 100;

@@ -12,11 +12,6 @@ const NewPassword = () => {
     setIsSubmitted(true);
   };
 
-  const handleBackToLogin = () => {
-    
-    console.log('Back to login');
-  };
-
   const containerStyle: React.CSSProperties = {
     height: '100vh',
     width: '100vw',

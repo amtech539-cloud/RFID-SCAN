@@ -28,6 +28,26 @@ const DropdownMenu = ({ items, isOpen, onClose, triggerRef, onMouseEnter, onMous
     }
   }, [isOpen, triggerRef]);
 
+  // Close on Escape or click outside
+  useEffect(() => {
+    if (!isOpen) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') onClose();
+    };
+    const onMouseDown = (e: MouseEvent) => {
+      const target = e.target as Node;
+      if (dropdownRef.current && !dropdownRef.current.contains(target) && triggerRef.current && !triggerRef.current.contains(target)) {
+        onClose();
+      }
+    };
+    document.addEventListener('keydown', onKey);
+    document.addEventListener('mousedown', onMouseDown);
+    return () => {
+      document.removeEventListener('keydown', onKey);
+      document.removeEventListener('mousedown', onMouseDown);
+    };
+  }, [isOpen, onClose, triggerRef]);
+
   if (!isOpen) return null;
 
   const dropdownStyle: React.CSSProperties = {
