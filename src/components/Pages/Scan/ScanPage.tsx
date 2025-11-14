@@ -23,7 +23,7 @@ const ScanPage: React.FC = () => {
     // Fetch warehouse list on mount
     useEffect(() => {
       const token = localStorage.getItem('authToken');
-      fetch('http://lv-backend.ap-south-1.elasticbeanstalk.com/warehouse', {
+      fetch('https://testlivesase-8.onrender.com/warehouse', {
         method: 'GET',
         headers: {
           'Authorization': `Bearer ${token}`,
@@ -73,7 +73,7 @@ const ScanPage: React.FC = () => {
   // Fetch EPC API data on mount
   useEffect(() => {
     const token = localStorage.getItem('authToken');
-    fetch('http://lv-backend.ap-south-1.elasticbeanstalk.com/product/epc?limit=50&page=&sort=', {
+    fetch('https://testlivesase-8.onrender.com/product/epc?limit=50&page=&sort=', {
       method: 'GET',
       headers: {
         'Authorization': `Bearer ${token}`,

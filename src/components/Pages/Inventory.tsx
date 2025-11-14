@@ -49,7 +49,7 @@ const Inventory: React.FC = () => {
   useEffect(() => {
     setLoading(true);
     const token = localStorage.getItem('authToken');
-    fetch('http://lv-backend.ap-south-1.elasticbeanstalk.com/product/get?page=null&limit=null&sort=null', {
+    fetch('https://testlivesase-8.onrender.com/product/get?page=null&limit=null&sort=null', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
